@@ -1,0 +1,26 @@
+.home-content {
+    .home-content-inputmenu {
+        margin         : 5px 30px;
+        display        : flex;
+        gap            : 169px;
+        width          : 1632px;
+        justify-content: center;
+        align-items    : center;
+    }
+
+    .content-home-fil {
+        line-height  : 30px;
+        display      : flex;
+        margin-left  : 30px;
+        margin-bottom: 20px;
+
+        .btn-content-home-fil {
+            border-radius   : 20px;
+            background-color: #94beeb;
+            color           : #46515F;
+            height          : 28px;
+            font-weight     : 500;
+            padding         : 0 10px;
+        }
+    }
+}

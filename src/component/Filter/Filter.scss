@@ -1,0 +1,32 @@
+.search-fiter {
+    display     : flex;
+    width       : 360px;
+    margin-right: 60px;
+    height      : 35px;
+
+}
+
+.statusnumber {
+    border-radius: 20px;
+    color        : #007AFF;
+    font-size    : 14px;
+
+    height          : 25px;
+    background-color: #F2F9FF;
+    padding         : 0 13px;
+}
+
+.buttonstatus {
+    border-radius: 20px;
+    border       : 1px solid #007AFF;
+    background   : #F2F9FF;
+}
+
+.anticon.anticon-close.ant-tag-close-icon {
+    color: black;
+}
+
+.ant-checkbox-group {
+    display       : flex;
+    flex-direction: column;
+}
