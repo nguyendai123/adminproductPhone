@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+
 import { Button, Divider, Input, Space, Menu, Tag, Table } from "antd";
 import {
   SearchOutlined,
@@ -14,13 +17,22 @@ const dividerStyle = {
   height: "100%",
   borderInlineStart: "1px solid white",
 };
+
 const items = [
   {
-    label: "Đang lọc",
+    label: (
+      <Link className="link" to="/">
+        Đang lọc
+      </Link>
+    ),
     key: "Đang lọc",
   },
   {
-    label: "Yêu cầu",
+    label: (
+      <Link className="link" to="/adj">
+        Yêu cầu
+      </Link>
+    ),
     key: "Yêu cầu",
   },
   {
@@ -68,7 +80,10 @@ const items = [
   {
     label: (
       <Button>
-        <FilterOutlined /> Bộ lọc
+        <FilterOutlined />{" "}
+        <Link className="link" to="/filter">
+          Bộ lọc
+        </Link>
       </Button>
     ),
     key: "Bộ lọc",
@@ -193,6 +208,7 @@ for (let i = 0; i < 46; i++) {
 }
 const defaultFooter = () => "Hiển thị 1 - 10 của 1126";
 const HomeContent = () => {
+  let navigate = useNavigate();
   const [current, setCurrent] = useState("Đang lọc");
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const onClick = (e) => {
@@ -203,6 +219,15 @@ const HomeContent = () => {
   const onSelectChange = (newSelectedRowKeys) => {
     console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
+  };
+  const onClickWebSiteLogo = () => {
+    return navigate("/");
+  };
+  const onClickYeuCau = () => {
+    return navigate("/adj");
+  };
+  const onClickFilter = () => {
+    return navigate("/filter");
   };
   const rowSelection = {
     selectedRowKeys,
